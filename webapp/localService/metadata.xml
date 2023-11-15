@@ -1,0 +1,415 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_xbrixsd_util" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="xBRIxCE_DOCSTAT_UTLTYType" sap:label="Custom entity for Utility Program" sap:content-version="1">
+				<Key><PropertyRef Name="param1"/><PropertyRef Name="param2"/><PropertyRef Name="remarks"/><PropertyRef Name="doctype"/></Key><Property Name="param1" Type="Edm.String" Nullable="false" MaxLength="200" sap:display-format="UpperCase" sap:label="CHARACTER 200"/><Property Name="param2" Type="Edm.String" Nullable="false" MaxLength="200" sap:display-format="UpperCase" sap:label="CHARACTER 200"/><Property Name="remarks" Type="Edm.String" Nullable="false" MaxLength="500" sap:label="Remarks"/><Property Name="doctype" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label="Document Type Code"
+					sap:quickinfo="DOCTYPCODE"/><Property Name="message" Type="Edm.String" MaxLength="200" sap:display-format="UpperCase" sap:label="CHARACTER 200" sap:heading=""/><Property Name="msgtype" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Type of Document"/><NavigationProperty Name="Parameters" Relationship="cds_xbrixsd_util.assoc_F4A0054752B2E59FB135B44B09723A41"
+					FromRole="ToRole_assoc_F4A0054752B2E59FB135B44B09723A41" ToRole="FromRole_assoc_F4A0054752B2E59FB135B44B09723A41" sap:filterable="false"/></EntityType>
+			<EntityType Name="xBRIxCE_DOCSTAT_UTLTYParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="param1"/><PropertyRef Name="param2"/><PropertyRef Name="remarks"/></Key><Property Name="param1" Type="Edm.String" Nullable="false" MaxLength="200" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHARACTER 200" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="param2" Type="Edm.String" Nullable="false" MaxLength="200" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHARACTER 200" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="remarks" Type="Edm.String" Nullable="false" MaxLength="500" sap:parameter="mandatory" sap:label="Remarks"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="cds_xbrixsd_util.assoc_F4A0054752B2E59FB135B44B09723A41"
+					FromRole="FromRole_assoc_F4A0054752B2E59FB135B44B09723A41" ToRole="ToRole_assoc_F4A0054752B2E59FB135B44B09723A41"/></EntityType>
+			<EntityType Name="xBRIxC_Stat_util_RptType" sap:label="Status Change Report" sap:content-version="1">
+				<Key><PropertyRef Name="docno"/><PropertyRef Name="doctype"/><PropertyRef Name="logdate"/><PropertyRef Name="logtime"/></Key><Property Name="docno" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"
+					sap:quickinfo="BOE Number (Internal)"/><Property Name="doctype" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label="Document Type"
+					sap:quickinfo="DOCTYPCODE" sap:value-list="standard"/><Property Name="logdate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Log Date"
+					sap:quickinfo="/bri/datum"/><Property Name="logtime" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Log Time" sap:quickinfo="Document Created Time"/><Property Name="boestat" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="boestatdesc" Type="Edm.String" MaxLength="55" sap:label="BOE Status"/><Property Name="clinstat" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="clinstatdes" Type="Edm.String" MaxLength="55" sap:label="CLIN Status"/><Property Name="nndostat" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="nndostatdesc" Type="Edm.String" MaxLength="55" sap:label="NNDO Status"/><Property Name="edocstat" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="edocstatdesc" Type="Edm.String" MaxLength="55" sap:label="EDOC Status"/><Property Name="remarks" Type="Edm.String" MaxLength="500" sap:label="Remarks"/><Property Name="mailrecdt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Mail Receive Date"
+					sap:quickinfo="/bri/datum"/><Property Name="userid" Type="Edm.String" MaxLength="12" sap:label="User ID"
+					sap:quickinfo="Name of Person Responsible for Creating the Object"/><Property Name="name" Type="Edm.String" MaxLength="100" sap:label="User Name" sap:quickinfo="name"/><NavigationProperty Name="to_boestat" Relationship="cds_xbrixsd_util.assoc_5291E916155275A60B259D625A0D5E5C"
+					FromRole="FromRole_assoc_5291E916155275A60B259D625A0D5E5C" ToRole="ToRole_assoc_5291E916155275A60B259D625A0D5E5C"/><NavigationProperty Name="to_clinstat" Relationship="cds_xbrixsd_util.assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"
+					FromRole="FromRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2" ToRole="ToRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"/><NavigationProperty Name="to_edocstat" Relationship="cds_xbrixsd_util.assoc_C9B16F5A710185FE324F378DD434F457"
+					FromRole="FromRole_assoc_C9B16F5A710185FE324F378DD434F457" ToRole="ToRole_assoc_C9B16F5A710185FE324F378DD434F457"/><NavigationProperty Name="to_nndostat" Relationship="cds_xbrixsd_util.assoc_63935DB1FFC031D476D6C834258609AE"
+					FromRole="FromRole_assoc_63935DB1FFC031D476D6C834258609AE" ToRole="ToRole_assoc_63935DB1FFC031D476D6C834258609AE"/></EntityType>
+			<EntityType Name="xBRIxI_BOESTATType" sap:label="Status of Bill of Entry" sap:content-version="1">
+				<Key><PropertyRef Name="status"/></Key><Property Name="status" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="descr" Type="Edm.String" MaxLength="55"/></EntityType>
+			<EntityType Name="xBRIxI_CLINSTATType" sap:label="Status of CLIN" sap:content-version="1">
+				<Key><PropertyRef Name="status"/></Key><Property Name="status" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="descr" Type="Edm.String" MaxLength="55"/></EntityType>
+			<EntityType Name="xBRIxI_DOCT_CODTYPType" sap:label="Document Types" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="code"/><PropertyRef Name="codtyp"/></Key><Property Name="code" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Code Type"
+					sap:quickinfo="Abbrevation of a code type , Eg , PORT will be the code for"/><Property Name="codtyp" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label="Code"
+					sap:quickinfo="Specific code for the entity Eg : BOM1 Will be maitained for"/><Property Name="coddesc" Type="Edm.String" MaxLength="35" sap:label="Code Description" sap:quickinfo="Code description"/></EntityType>
+			<EntityType Name="xBRIxI_EDOCSTATType" sap:label="Status of Exports Documents" sap:content-version="1">
+				<Key><PropertyRef Name="status"/></Key><Property Name="status" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="descr" Type="Edm.String" MaxLength="55"/></EntityType>
+			<EntityType Name="xBRIxI_NNDOSTATType" sap:label="Status of NNDO" sap:content-version="1">
+				<Key><PropertyRef Name="status"/></Key><Property Name="status" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Document Status"/><Property Name="descr" Type="Edm.String" MaxLength="55"/></EntityType>
+			<EntityType Name="SAP__Currency" sap:content-version="1">
+				<Key><PropertyRef Name="CurrencyCode"/></Key><Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/><Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/></EntityType>
+			<EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+				<Key><PropertyRef Name="UnitCode"/></Key><Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/><Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO Code"/><Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/><Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Meas. Unit Text"/><Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/></EntityType>
+			<EntityType Name="SAP__DocumentDescription" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID"/><Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/><Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Time Stamp"/><Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="256"/><Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256"/><NavigationProperty Name="Format" Relationship="cds_xbrixsd_util.to_format" FromRole="FromRole_to_format" ToRole="ToRole_to_format"/><NavigationProperty Name="TableColumns" Relationship="cds_xbrixsd_util.to_tablecolumns" FromRole="FromRole_to_tablecolumns"
+					ToRole="ToRole_to_tablecolumns"/><NavigationProperty Name="CoverPage" Relationship="cds_xbrixsd_util.to_coverpage" FromRole="FromRole_to_coverpage"
+					ToRole="ToRole_to_coverpage"/><NavigationProperty Name="Signature" Relationship="cds_xbrixsd_util.to_signature" FromRole="FromRole_to_signature"
+					ToRole="ToRole_to_signature"/><NavigationProperty Name="PDFStandard" Relationship="cds_xbrixsd_util.to_pdfstandard" FromRole="FromRole_to_pdfstandard"
+					ToRole="ToRole_to_pdfstandard"/><NavigationProperty Name="Hierarchy" Relationship="cds_xbrixsd_util.to_Hierarchy" FromRole="FromRole_to_Hierarchy"
+					ToRole="ToRole_to_Hierarchy"/><NavigationProperty Name="Header" Relationship="cds_xbrixsd_util.to_header" FromRole="FromRole_to_header" ToRole="ToRole_to_header"/><NavigationProperty Name="Footer" Relationship="cds_xbrixsd_util.to_Footer" FromRole="FromRole_to_Footer" ToRole="ToRole_to_Footer"/></EntityType>
+			<EntityType Name="SAP__Format" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="FitToPage" Type="cds_xbrixsd_util.SAP__FitToPage" Nullable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="FontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Orientation" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="PaperSize" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="BorderSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="MarginSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="FontName" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Font Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Padding" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__PDFStandard" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="UsePDFAConformance" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__TableColumns" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/><PropertyRef Name="Name"/><PropertyRef Name="Header"/></Key><Property Name="Format" Type="cds_xbrixsd_util.SAP__TableColumnFormat" Nullable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Header" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="HorizontalAlignment" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__CoverPage" sap:content-version="1">
+				<Key><PropertyRef Name="Title"/><PropertyRef Name="Id"/><PropertyRef Name="Name"/></Key><Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__Signature" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="DoSign" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__Hierarchy" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="DistanceFromRootElement" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="DrillStateElement" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__PDFHeader" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Right" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Left" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Center" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__PDFFooter" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Right" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Left" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Center" Type="cds_xbrixsd_util.SAP__HeaderFooterField" Nullable="false"/><Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="SAP__ValueHelp" sap:content-version="1">
+				<Key><PropertyRef Name="VALUEHELP"/></Key><Property Name="VALUEHELP" Type="Edm.String" Nullable="false"/><Property Name="FIELD_VALUE" Type="Edm.String" Nullable="false" MaxLength="10"/><Property Name="DESCRIPTION" Type="Edm.String"/></EntityType>
+			<ComplexType Name="SAP__FitToPage"><Property Name="ErrorRecoveryBehavior" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Error behavior" sap:creatable="false"
+				sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IsEnabled" Type="Edm.Boolean" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/><Property Name="MinimumFontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/></ComplexType>
+			<ComplexType Name="SAP__TableColumnFormat"><Property Name="DisplayFormat" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"
+				sap:sortable="false" sap:filterable="false"/><Property Name="IANATimezone" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/><Property Name="IANATimezoneProperty" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/></ComplexType>
+			<ComplexType Name="SAP__HeaderFooterField"><Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+				sap:filterable="false"/></ComplexType>
+			<Association Name="assoc_5291E916155275A60B259D625A0D5E5C" sap:content-version="1"><End Type="cds_xbrixsd_util.xBRIxC_Stat_util_RptType" Multiplicity="1" Role="FromRole_assoc_5291E916155275A60B259D625A0D5E5C"/><End Type="cds_xbrixsd_util.xBRIxI_BOESTATType" Multiplicity="0..1" Role="ToRole_assoc_5291E916155275A60B259D625A0D5E5C"/></Association>
+			<Association Name="assoc_0DFE75417AA74E8E8E87E4A3AB852EC2" sap:content-version="1"><End Type="cds_xbrixsd_util.xBRIxC_Stat_util_RptType" Multiplicity="1" Role="FromRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"/><End Type="cds_xbrixsd_util.xBRIxI_CLINSTATType" Multiplicity="0..1" Role="ToRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"/></Association>
+			<Association Name="assoc_C9B16F5A710185FE324F378DD434F457" sap:content-version="1"><End Type="cds_xbrixsd_util.xBRIxC_Stat_util_RptType" Multiplicity="1" Role="FromRole_assoc_C9B16F5A710185FE324F378DD434F457"/><End Type="cds_xbrixsd_util.xBRIxI_EDOCSTATType" Multiplicity="0..1" Role="ToRole_assoc_C9B16F5A710185FE324F378DD434F457"/></Association>
+			<Association Name="assoc_63935DB1FFC031D476D6C834258609AE" sap:content-version="1"><End Type="cds_xbrixsd_util.xBRIxC_Stat_util_RptType" Multiplicity="1" Role="FromRole_assoc_63935DB1FFC031D476D6C834258609AE"/><End Type="cds_xbrixsd_util.xBRIxI_NNDOSTATType" Multiplicity="0..1" Role="ToRole_assoc_63935DB1FFC031D476D6C834258609AE"/></Association>
+			<Association Name="to_format" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/><End Type="cds_xbrixsd_util.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_format"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_format"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_tablecolumns" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_tablecolumns"/><End Type="cds_xbrixsd_util.SAP__TableColumns" Multiplicity="*" Role="ToRole_to_tablecolumns"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_tablecolumns"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_tablecolumns"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_coverpage" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_coverpage"/><End Type="cds_xbrixsd_util.SAP__CoverPage" Multiplicity="*" Role="ToRole_to_coverpage"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_coverpage"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_coverpage"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_signature" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_signature"/><End Type="cds_xbrixsd_util.SAP__Signature" Multiplicity="1" Role="ToRole_to_signature"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_signature"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_signature"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_pdfstandard" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_pdfstandard"/><End Type="cds_xbrixsd_util.SAP__PDFStandard" Multiplicity="1" Role="ToRole_to_pdfstandard"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_pdfstandard"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_pdfstandard"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_Hierarchy" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_Hierarchy"/><End Type="cds_xbrixsd_util.SAP__Hierarchy" Multiplicity="1" Role="ToRole_to_Hierarchy"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_Hierarchy"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_Hierarchy"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_header" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_header"/><End Type="cds_xbrixsd_util.SAP__PDFHeader" Multiplicity="1" Role="ToRole_to_header"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_header"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_header"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="to_Footer" sap:content-version="1"><End Type="cds_xbrixsd_util.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_Footer"/><End Type="cds_xbrixsd_util.SAP__PDFFooter" Multiplicity="1" Role="ToRole_to_Footer"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_to_Footer"><PropertyRef Name="Id"/></Principal>
+					<Dependent Role="ToRole_to_Footer"><PropertyRef Name="Id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_F4A0054752B2E59FB135B44B09723A41" sap:content-version="1"><End Type="cds_xbrixsd_util.xBRIxCE_DOCSTAT_UTLTYParameters" Multiplicity="1" Role="FromRole_assoc_F4A0054752B2E59FB135B44B09723A41"/><End Type="cds_xbrixsd_util.xBRIxCE_DOCSTAT_UTLTYType" Multiplicity="*" Role="ToRole_assoc_F4A0054752B2E59FB135B44B09723A41"/></Association>
+			<EntityContainer Name="cds_xbrixsd_util_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx pdf"><EntitySet Name="SAP__Currencies" EntityType="cds_xbrixsd_util.SAP__Currency" sap:content-version="1"/><EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_xbrixsd_util.SAP__UnitOfMeasure" sap:content-version="1"/><EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_xbrixsd_util.SAP__DocumentDescription" sap:content-version="1"/><EntitySet Name="SAP__FormatSet" EntityType="cds_xbrixsd_util.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__PDFStandardSet" EntityType="cds_xbrixsd_util.SAP__PDFStandard" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__TableColumnsSet" EntityType="cds_xbrixsd_util.SAP__TableColumns" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__CoverPageSet" EntityType="cds_xbrixsd_util.SAP__CoverPage" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__SignatureSet" EntityType="cds_xbrixsd_util.SAP__Signature" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__HierarchySet" EntityType="cds_xbrixsd_util.SAP__Hierarchy" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__PDFHeaderSet" EntityType="cds_xbrixsd_util.SAP__PDFHeader" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__PDFFooterSet" EntityType="cds_xbrixsd_util.SAP__PDFFooter" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="SAP__ValueHelpSet" EntityType="cds_xbrixsd_util.SAP__ValueHelp" sap:content-version="1"/><EntitySet Name="xBRIxCE_DOCSTAT_UTLTYSet" EntityType="cds_xbrixsd_util.xBRIxCE_DOCSTAT_UTLTYType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="xBRIxCE_DOCSTAT_UTLTY" EntityType="cds_xbrixsd_util.xBRIxCE_DOCSTAT_UTLTYParameters" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="xBRIxC_Stat_util_Rpt" EntityType="cds_xbrixsd_util.xBRIxC_Stat_util_RptType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="xBRIxI_BOESTAT" EntityType="cds_xbrixsd_util.xBRIxI_BOESTATType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="xBRIxI_CLINSTAT" EntityType="cds_xbrixsd_util.xBRIxI_CLINSTATType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="xBRIxI_DOCT_CODTYP" EntityType="cds_xbrixsd_util.xBRIxI_DOCT_CODTYPType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="xBRIxI_EDOCSTAT" EntityType="cds_xbrixsd_util.xBRIxI_EDOCSTATType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="xBRIxI_NNDOSTAT" EntityType="cds_xbrixsd_util.xBRIxI_NNDOSTATType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="to_FooterSet" Association="cds_xbrixsd_util.to_Footer" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Footer"/><End EntitySet="SAP__PDFFooterSet" Role="ToRole_to_Footer"/></AssociationSet>
+				<AssociationSet Name="to_headerSet" Association="cds_xbrixsd_util.to_header" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_header"/><End EntitySet="SAP__PDFHeaderSet" Role="ToRole_to_header"/></AssociationSet>
+				<AssociationSet Name="to_formatSet" Association="cds_xbrixsd_util.to_format" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/><End EntitySet="SAP__FormatSet" Role="ToRole_to_format"/></AssociationSet>
+				<AssociationSet Name="to_pdfstandardSet" Association="cds_xbrixsd_util.to_pdfstandard" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_pdfstandard"/><End EntitySet="SAP__PDFStandardSet" Role="ToRole_to_pdfstandard"/></AssociationSet>
+				<AssociationSet Name="assoc_C9B16F5A710185FE324F378DD434F457" Association="cds_xbrixsd_util.assoc_C9B16F5A710185FE324F378DD434F457"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xBRIxC_Stat_util_Rpt" Role="FromRole_assoc_C9B16F5A710185FE324F378DD434F457"/><End EntitySet="xBRIxI_EDOCSTAT" Role="ToRole_assoc_C9B16F5A710185FE324F378DD434F457"/></AssociationSet>
+				<AssociationSet Name="assoc_0DFE75417AA74E8E8E87E4A3AB852EC2" Association="cds_xbrixsd_util.assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xBRIxC_Stat_util_Rpt" Role="FromRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"/><End EntitySet="xBRIxI_CLINSTAT" Role="ToRole_assoc_0DFE75417AA74E8E8E87E4A3AB852EC2"/></AssociationSet>
+				<AssociationSet Name="to_tablecolumnsSet" Association="cds_xbrixsd_util.to_tablecolumns" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/><End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/></AssociationSet>
+				<AssociationSet Name="assoc_63935DB1FFC031D476D6C834258609AE" Association="cds_xbrixsd_util.assoc_63935DB1FFC031D476D6C834258609AE"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xBRIxC_Stat_util_Rpt" Role="FromRole_assoc_63935DB1FFC031D476D6C834258609AE"/><End EntitySet="xBRIxI_NNDOSTAT" Role="ToRole_assoc_63935DB1FFC031D476D6C834258609AE"/></AssociationSet>
+				<AssociationSet Name="to_signatureSet" Association="cds_xbrixsd_util.to_signature" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/><End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/></AssociationSet>
+				<AssociationSet Name="assoc_5291E916155275A60B259D625A0D5E5C" Association="cds_xbrixsd_util.assoc_5291E916155275A60B259D625A0D5E5C"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xBRIxC_Stat_util_Rpt" Role="FromRole_assoc_5291E916155275A60B259D625A0D5E5C"/><End EntitySet="xBRIxI_BOESTAT" Role="ToRole_assoc_5291E916155275A60B259D625A0D5E5C"/></AssociationSet>
+				<AssociationSet Name="to_coverpageSet" Association="cds_xbrixsd_util.to_coverpage" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/><End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/></AssociationSet>
+				<AssociationSet Name="to_HierarchySet" Association="cds_xbrixsd_util.to_Hierarchy" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Hierarchy"/><End EntitySet="SAP__HierarchySet" Role="ToRole_to_Hierarchy"/></AssociationSet>
+				<AssociationSet Name="assoc_F4A0054752B2E59FB135B44B09723A41" Association="cds_xbrixsd_util.assoc_F4A0054752B2E59FB135B44B09723A41"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="xBRIxCE_DOCSTAT_UTLTY" Role="FromRole_assoc_F4A0054752B2E59FB135B44B09723A41"/><End EntitySet="xBRIxCE_DOCSTAT_UTLTYSet" Role="ToRole_assoc_F4A0054752B2E59FB135B44B09723A41"/></AssociationSet>
+			</EntityContainer><Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.xBRIxC_Stat_util_RptType/doctype">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Document Type"/><PropertyValue Property="CollectionPath" String="xBRIxI_DOCT_CODTYP"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="doctype"/><PropertyValue Property="ValueListProperty" String="codtyp"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="code"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="coddesc"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.cds_xbrixsd_util_Entities"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.cds_xbrixsd_util_Entities/xBRIxCE_DOCSTAT_UTLTY">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>param1</PropertyPath>
+								<PropertyPath>param2</PropertyPath>
+								<PropertyPath>remarks</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>param1</PropertyPath>
+								<PropertyPath>param2</PropertyPath>
+								<PropertyPath>remarks</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.cds_xbrixsd_util_Entities/xBRIxC_Stat_util_Rpt">
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_boestat"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_clinstat"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_edocstat"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_nndostat"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.cds_xbrixsd_util_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.CurrencyCodes">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__Currencies"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.UnitsOfMeasure">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__PDF.Features">
+					<Record><PropertyValue Property="DocumentDescriptionReference" String="./$metadata"/><PropertyValue Property="DocumentDescriptionCollection" String="SAP__MyDocumentDescriptions"/><PropertyValue Property="ArchiveFormat" Bool="true"/><PropertyValue Property="CoverPage" Bool="true"/><PropertyValue Property="Signature" Bool="true"/><PropertyValue Property="FitToPage" Bool="true"/><PropertyValue Property="FontName" Bool="true"/><PropertyValue Property="FontSize" Bool="true"/><PropertyValue Property="Margin" Bool="true"/><PropertyValue Property="Border" Bool="true"/><PropertyValue Property="Padding" Bool="true"/><PropertyValue Property="HeaderFooter" Bool="true"/><PropertyValue Property="IANATimezoneFormat" Bool="true"/><PropertyValue Property="ResultSizeDefault" Int="20000"/><PropertyValue Property="ResultSizeMaximum" Int="20000"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.SAP__DocumentDescription">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__MyDocumentDescriptions"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__Currency/CurrencyCode"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__UnitOfMeasure/UnitCode"><Annotation Term="SAP__common.Text" Path="Text"/><Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/><Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/><Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__UnitOfMeasure">
+				<Annotation Term="SAP__core.AlternateKeys">
+					<Collection>
+						<Record>
+							<PropertyValue Property="Key">
+								<Collection>
+									<Record><PropertyValue Property="Name" Path="ExternalCode"/><PropertyValue Property="Alias" String="ExternalCode"/></Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__DocumentDescription/CreatedBy"><Annotation Term="SAP__core.Computed"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__DocumentDescription/CreatedAt"><Annotation Term="SAP__core.Computed"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__DocumentDescription">
+				<Annotation Term="SAP__capabilties.InsertRestrictions">
+					<Record><PropertyValue Property="Insertable" Bool="false"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.UpdateRestrictions">
+					<Record><PropertyValue Property="Updatable" Bool="false"/>
+						<PropertyValue Property="QueryOptions">
+							<Record><PropertyValue Property="SelectSupported" Bool="true"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.DeleteRestrictions">
+					<Record><PropertyValue Property="Deletable" Bool="false"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilties.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="FilterExpressionRestrictions">
+							<Collection>
+								<Record><PropertyValue Property="Property" PropertyPath="Format/Orientation"/><PropertyValue Property="AllowedExpressions" String="Multivalue"/></Record>
+								<Record><PropertyValue Property="Property" PropertyPath="Format/PaperSize"/><PropertyValue Property="AllowedExpressions" String="Multivalue"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__Format/FitToPage/ErrorRecoveryBehavior">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="../../../../SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27ErrorRecoveryBehaviour%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__Format/FontName">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__Format/PaperSize">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27PaperSize%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFHeader/Left">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFHeader/Right">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFHeader/Center">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFFooter/Left">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFFooter/Right">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__PDFFooter/Center">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HeaderFooter%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__TableColumns/Format/Display_Format">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27TableColumnFormat%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__Format/Orientation">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27FontName%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_xbrixsd_util.SAP__TableColumns/HorizontalAlignment">
+				<Annotation Term="SAP__common.ValueListReferences">
+					<Record><PropertyValue Property="Url" String="./$metadata"/><PropertyValue Property="CollectionPath" String="SAP__ValueHelpSet?$filter=VALUEHELP%20eq%20%27HorizontalAlignment%27"/></Record>
+				</Annotation><Annotation Term="SAP__common.ValueListWithFixedValues"/></Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./bri/SB_UTIL/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./bri/SB_UTIL/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

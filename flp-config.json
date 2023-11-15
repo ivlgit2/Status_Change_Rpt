@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "bri.status_change_report.Status_Change_Report",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#Status_Change_Report-Display",
+        "navigationComponentName": "bri.status_change_report",
+        "intentSemanticObject": "Status_Change_Report",
+        "intentAction": "Display",
+        "html5ApplicationName": "statuschangereport",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "220bac92-300f-43c3-a3ff-e5c2f879e260-1559205986367"
+        ],
+        "contentPackages": [
+            "c5e2c184-44db-49e7-86f7-80df6bba5849-1700033460601"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Status Change Report",
+        "subtitle": "Subtitle",
+        "searchKeywords": "Status Change Report,Subtitle",
+        "displayIconUrl": "sap-icon://settings",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
